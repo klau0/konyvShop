@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/book_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxHeight="300dp" />
+
+        <TextView
+            android:id="@+id/titleView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/book_img"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.03"
+            android:paddingLeft="@dimen/default_padding"
+            android:paddingTop="@dimen/default_padding"
+            android:paddingRight="@dimen/default_padding"
+            android:paddingBottom="5dp"
+            android:text="@string/title"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/authorView"
+            android:text="@string/author"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleView"
+            android:paddingLeft="@dimen/default_padding"
+            android:paddingRight="@dimen/default_padding"
+            android:paddingBottom="@dimen/default_padding"/>
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="@android:style/Widget.Material.Light.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/authorView"
+            android:layout_marginStart="8dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:progressTint="#FF9800" />
+
+        <TextView
+            android:id="@+id/infoView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ratingBar"
+            android:paddingLeft="@dimen/default_padding"
+            android:paddingTop="15dp"
+            android:paddingRight="@dimen/default_padding"
+            android:text="@string/info"
+            android:textColor="#5E5E5E" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/infoView"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-medium"
+            android:padding="@dimen/default_padding"
+            android:textColor="@color/red" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/price"
+            android:layout_centerHorizontal="true">
+
+            <Button
+                android:id="@+id/add_to_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/to_cart" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

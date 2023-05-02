@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1032503853174",
+    "project_id": "bookwebshop-519ed",
+    "storage_bucket": "bookwebshop-519ed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1032503853174:android:30cf15f2da72cbb087df57",
+        "android_client_info": {
+          "package_name": "webshop.konyv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1032503853174-6bgn1qgg9so3d4sr26ts4ohst2gqforj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "webshop.konyv",
+            "certificate_hash": "8d7d2626837c903bebe7bed15152e12766abf380"
+          }
+        },
+        {
+          "client_id": "1032503853174-0eu0hcuup0sdg33vtvlokbcmk7ullu2u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnV_VpbGkVKPMOKQDcrJkMSIdOHWCVgjs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1032503853174-0eu0hcuup0sdg33vtvlokbcmk7ullu2u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

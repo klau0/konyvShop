@@ -1,0 +1,108 @@
+<resources>
+    <string name="app_name">Czikornyai és Patza</string>
+    <string name="email">E-mail</string>
+    <string name="pswd">Jelszó</string>
+    <string name="guestLogin">Tovább az oldalra</string>
+    <string name="login">Bejelentkezés</string>
+    <string name="register">Regisztráció</string>
+    <string name="registration">Regisztráció</string>
+    <string name="name">Név</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Mégse</string>
+    <string name="address">Postai cím</string>
+    <string name="phone_number">Telefon</string>
+    <string name="password_again">Jelszó újra</string>
+    <string name="to_cart">Kosárba</string>
+    <string name="info">Leírás oaenfheofhn IBIBIBNIibciendocenőocnqwaoifcnaowefnoéeasudnféosedngfésednféednféiesun</string>
+    <string name="author">Író dfgrgwsergewg</string>
+    <string name="title">Cím cascfavaecv  edfaehgv</string>
+    <string name="house">Ház:</string>
+
+    <string-array name="houses">
+        <item>Griffendél</item>
+        <item>Mardekár</item>
+        <item>Hugrabug</item>
+        <item>Hollóhát</item>
+    </string-array>
+    
+    <string-array name="titles">
+        <item>Standard book of spells</item>
+        <item>Dark forces</item>
+        <item>Defensive magical theory</item>
+        <item>Unfogging the future</item>
+        <item>1000 magical herbs and fungi</item>
+        <item>A history of magic</item>
+        <item>Numerology &amp; grammatica</item>
+        <item>Advanced potion making</item>
+        <item>Fantastic beasts and where to find them</item>
+        <item>Voyages with vampires</item>
+    </string-array>
+
+    <string-array name="authors">
+        <item>Miranda Goshawk</item>
+        <item>Quentin Trimble</item>
+        <item>Wilbert Slinkhard</item>
+        <item>Cassandra Vablatsky</item>
+        <item>Phyllida Spore</item>
+        <item>Bathilda Bagshot</item>
+        <item>Lenora Wakefield</item>
+        <item>Libatius Borage</item>
+        <item>Newt Scamander</item>
+        <item>Gilderoy Lockhart</item>
+    </string-array>
+
+    <string-array name="infos">
+        <item>Az alap varázsigék elsajátításához elengedhetetlen ez a kötet, nem véletlenül kötelező idén is az elsőéveseknek.</item>
+        <item>Eleged van hogy az undok testvéred folyton megátkoz ha rossz napja van? Akkor ez a könyv neked let kitalálva.</item>
+        <item>Ezt a könyvet csak a Mágiaügyi Minisztérium előírásai miatt árusítjuk.</item>
+        <item>A jóslástan egyik alap műve. Sajnos az írót nem ismerték el az ő idejében (szélhámosnak gondolták a kortársai).</item>
+        <item>A könyv íróját folyton nyaggatták a szülei egy unokával, neki azonban a növények voltak a gyerekei, mindennél jobban szerette őket.
+            Gyerek helyett így egy könyvvel ajándékozta meg szüleit, melyet kedvenc fűszernövényeiről és gombáiról írt.</item>
+        <item>A mágiatörténet a roxforti diákok elmondása alapján unalmas tárgy, ez a kötet sem teszi izgalmasabbá.</item>
+        <item>Minden aritmetikát tanuló diák ismeri ezt a könyvet, a vélemények megoszlanak róla.</item>
+        <item>Bájitalkészítéshez, kizárólag haladóknak! Rosszul elkészített bájitalokért nem vállalunk felelősséget.</item>
+        <item>Az aranyos golymóktól a rémes akromantulákig szinte minden varázslény megtalálható ebben a könyvben.</item>
+        <item>A hírhedt Gilderoy Lockhart ebben a könyvben azt próbálja elhitetni az olvasóval,
+            hogy megtérített egy vámpírt, aki találkozásukat követően salátán élt.</item>
+    </string-array>
+
+    <string-array name="prices">
+        <item>Ár: 5 Galleon</item>
+        <item>Ár: 4 Galleon 25 Knút</item>
+        <item>Ár: 4 Galleon 2 Sarló</item>
+        <item>Ár: 5 Galleon 10 Sarló</item>
+        <item>Ár: 4 Galleon 6 Knút</item>
+        <item>Ár: 4 Galleon</item>
+        <item>Ár: 4 Galleon 10 Knút</item>
+        <item>Ár: 5 Galleon</item>
+        <item>Ár: 4 Galleon 30 Sarló</item>
+        <item>Ár: 4 Galleon 3 Knút</item>
+    </string-array>
+
+    <array name="rated_infos">
+        <item>5</item>
+        <item>4</item>
+        <item>1</item>
+        <item>3</item>
+        <item>5</item>
+        <item>1.5</item>
+        <item>2.5</item>
+        <item>3.5</item>
+        <item>5</item>
+        <item>2</item>
+    </array>
+
+    <array name="img_resources">
+        <item>@drawable/book_of_spells</item>
+        <item>@drawable/dark_forces</item>
+        <item>@drawable/defensive_theory</item>
+        <item>@drawable/future</item>
+        <item>@drawable/herbs_and_fungi</item>
+        <item>@drawable/history_of_magic</item>
+        <item>@drawable/numerology</item>
+        <item>@drawable/potion_making</item>
+        <item>@drawable/fantastic_beasts</item>
+        <item>@drawable/voyages_w_vampires</item>
+    </array>
+
+</resources>
