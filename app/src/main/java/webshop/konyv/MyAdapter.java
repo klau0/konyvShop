@@ -15,6 +15,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.ArrayList;
 
 public class MyAdapter
@@ -24,6 +27,7 @@ public class MyAdapter
     private ArrayList<Book> mShoppingItemsDataAll;
     private Context mContext;
     private int lastPosition = -1;
+
 
     MyAdapter (Context context, ArrayList<Book> itemsData){
         mShoppingItemsData = itemsData;
@@ -71,11 +75,11 @@ public class MyAdapter
         Book currentItem = mShoppingItemsData.get(position);
         holder.bindTo(currentItem);
 
-        /*if(holder.getAdapterPosition() > lastPosition){
-            Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.slide_in_row);
+        if(holder.getAdapterPosition() > lastPosition){
+            Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.slide_in);
             holder.itemView.startAnimation(animation);
             lastPosition = holder.getAdapterPosition();
-        }*/
+        }
     }
 
     @Override

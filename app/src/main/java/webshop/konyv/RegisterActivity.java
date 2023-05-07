@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private static final String LOG_TAG = RegisterActivity.class.getName();
@@ -22,6 +24,8 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     EditText addressEditText;
     Spinner houseSpinner;
     private FirebaseAuth mAuth;
+    private FirebaseFirestore mFirestore;
+    private CollectionReference userRefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,10 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                 R.array.houses, R.layout.spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         houseSpinner.setAdapter(adapter);
+
+        mFirestore = FirebaseFirestore.getInstance();
+        userRefs = mFirestore.collection("Users");
+
     }
 
     public void register(View view) {
@@ -59,6 +67,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         mAuth.createUserWithEmailAndPassword(email, pswd).addOnCompleteListener(this, task -> {
             if(task.isSuccessful()){
                 Log.d(LOG_TAG, "Felhasználó sikeresen létrehozva");
+                userRefs.add(new User(mAuth.getCurrentUser().getUid(), 0));
                 startShopping();
             } else {
                 Log.e(LOG_TAG, "Sikertelen felhasználó létrehozás");
@@ -69,7 +78,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
     private void startShopping(/* registered user data */){
         Intent intent = new Intent(this, ShoppingActivity.class);
-        //intent.putExtra("SECRET_KEY" ,SECRET_KEY);
         startActivity(intent);
     }
 

@@ -9,6 +9,11 @@ import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
+import android.content.BroadcastReceiver;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
@@ -30,7 +35,6 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 
 public class ShoppingActivity extends AppCompatActivity {
-    //TODO?: első vásárlásnál kap ajándékot
     private static final String LOG_TAG = ShoppingActivity.class.getName();
     private FirebaseUser user;
     private RecyclerView mRecyclerView;
@@ -38,12 +42,14 @@ public class ShoppingActivity extends AppCompatActivity {
     private MyAdapter mAdapter;
     private ArrayList<Book> bookList;
     private CollectionReference bookRefs;
+    private CollectionReference userRefs;
     private FrameLayout redCircle;
     private TextView redCircleNum;
     private boolean viewRow = true;
     private int gridNum = 1;
     private int queryLimit = 10;
     private static int cartItems;
+    private JobScheduler mJobScheduler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +65,7 @@ public class ShoppingActivity extends AppCompatActivity {
         }
 
         mFirestore = FirebaseFirestore.getInstance();
+        userRefs = mFirestore.collection("Users");
         bookRefs = mFirestore.collection("Konyvek");
         mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, gridNum));
@@ -67,7 +74,8 @@ public class ShoppingActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
         queryData();
-
+        mJobScheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
+        setJobScheduler();
     }
     private void initializeData() {
         String[] booksTitles = getResources().getStringArray(R.array.titles);
@@ -141,9 +149,6 @@ public class ShoppingActivity extends AppCompatActivity {
                 Intent intent = new Intent(this,MainActivity.class);
                 startActivity(intent);
                 return true;
-            case R.id.setting:
-                Log.d(LOG_TAG, "Beállítások megnyomva");
-                return true;
             case R.id.bag:
                 Log.d(LOG_TAG, "Kosár megnyomva");
                 return true;
@@ -204,6 +209,23 @@ public class ShoppingActivity extends AppCompatActivity {
 
         //mNotificationHandler.send(item.getName());
         queryData();
+    }
+
+    private void setJobScheduler() {
+        int networkType = JobInfo.NETWORK_TYPE_UNMETERED;
+        Boolean isDeviceCharging = true;
+        int hardDeadline = 30000; // 30 * 1000 ms = 30 sec.
+
+        ComponentName serviceName = new ComponentName(getPackageName(), NotificationJobService.class.getName());
+        JobInfo.Builder builder = new JobInfo.Builder(0, serviceName)
+                .setRequiredNetworkType(networkType)
+                .setRequiresCharging(isDeviceCharging)
+                .setOverrideDeadline(hardDeadline);
+
+        JobInfo jobInfo = builder.build();
+        mJobScheduler.schedule(jobInfo);
+
+        //mJobScheduler.cancelAll();
     }
 
 }

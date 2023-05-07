@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         email = findViewById(R.id.editTextEmail);
         password = findViewById(R.id.editTextPswd);
         mAuth = FirebaseAuth.getInstance();
-
     }
 
     public void loginAsGuest(View view) {
